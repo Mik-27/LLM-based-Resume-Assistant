@@ -1,0 +1,19 @@
+Task:
+Extract Keywords from given job description to be present in resume to make it more align with the job description.
+
+Instructions:
+- Extract high priority and low priority keywords from the job description.
+- Extract keywords that highlight technical skills as well as soft skills required for the role
+- The given example is for formatting purposes only and the keywords displayed should not affect the extraction of keywords from the job descriptions.
+
+Format:
+{
+    high_priority: ['keyword1', 'keyword2', ...],
+    low_priority: ['keyword1', 'keyword2', ...]
+}
+
+Example:
+{
+    high_priority: ['Python', 'SQL', 'Teamwork', ...],
+    low_priority: ['Datadog', 'Communication', ...]
+}

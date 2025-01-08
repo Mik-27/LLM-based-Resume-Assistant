@@ -1,0 +1,17 @@
+Task:
+Extract keywords from given resume.
+
+Instructions:
+-   Extract all keywords from the resume.
+-   Extract keywords that highlight technical skills as well as soft skills.
+-   The given example is for formatting purposes only and the keywords displayed should not affect the extraction of keywords from the resume.
+
+Format:
+{
+    keywords: ['keyword1', 'keyword2', ...]
+}
+
+Example:
+{
+    keywords: ['Python', 'SQL', 'Teamwork', ...]
+}

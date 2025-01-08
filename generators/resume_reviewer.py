@@ -35,19 +35,43 @@ class ResumeReviewer:
                 prompt = f.read().strip()
             response = self.llm_agent.generate_json_response(prompt, self.resume, self.job_description)
             response = json.loads(response.text)
+
+            assert type(response) == dict
+            assert 'strengths' in response and 'weaknesses' in response
+            
             return response
+        
         except Exception as e:
             print(e)
+
 
     def get_strengths(self) -> list:
         """Get strengths from the generated response"""
         response = self._generate_sw()
         return response['strengths']
-    
+
+
     def get_weaknesses(self) -> list:
         """Get weaknesses from the generated response"""
         response = self._generate_sw()
         return response['weaknesses']
+    
+    
+    def extract_keywords(self, source:str) -> dict:
+        """Extract keywords from job description"""
+        try:
+            if source == "resume":
+                with open("../prompts/extract_keywords.txt", mode='r') as f:
+                    prompt = f.read().strip()
+                response = self.llm_agent.generate_json_response(prompt, self.resume)
+            else:
+                with open("../prompts/extract_keywords.txt", mode='r') as f:
+                    prompt = f.read().strip()
+                response = self.llm_agent.generate_json_response(prompt, self.job_description)
+            response = json.loads(response.text)
+            return response
+        except Exception as e:
+            print(e)
 
 
 
