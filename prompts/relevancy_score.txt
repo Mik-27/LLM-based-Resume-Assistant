@@ -1,0 +1,21 @@
+Task:
+Compare the resume and job description to generate a relevancy score between the resume and job description.
+
+Instructions:
+- Generate relevancy score based on the following order of importance of elements:
+  Required Qualifications > Keywords Matching > Requires Experience > Preferred Qualification > Any other relevant element
+- Put emphasis on matching high priority keywords.
+- Domain specific requirements(semiconductor, transportation) or team specific(business, product) can be given less important as they are transferable skills. Having these skills is a boost to the resume and relevancy score but not having them does not affect relevancy score severely.
+- Everything does not need be compared exactly. Eg. Having 2 or 3 skills from 7 optional skills is still very good indicator
+- Do not reduce points for the same gaps repeatedly.
+- Master' degree can count for 2 years of experience.
+
+Output Format:
+{
+    relevancy_score: value(float)
+}
+
+Example:
+{
+    relevancy_score: 0.68
+}

@@ -1,0 +1,134 @@
+Task:
+Extract the strengths and weaknesses from the resume relevent to the job description.
+
+Instructions:
+- Generate the areas where the resume is able to clearly display the strengths as well as areas where the resume lacks when compared to job description and ways for improvement.
+- Show why an area is aligned to the job
+- Show why an area lacks, where it lacks and what are the suggested improvements
+- Do not summarize the generated text
+- Provide specific sentences which can be imrpoved in weaknesses->improvements
+
+Output:
+{
+    strengths: [
+        {
+            title: string,
+            strength: string, # Detailing the strength
+            importance: string # Why it matters
+        }
+    ],
+    weaknesses: [
+        {
+            ttile: string, 
+            problem: string, # Detailed problem
+            improvment:[
+                {
+                    issue: string, 
+                    solution: string,
+                    suggested_improvement: string # Suggested improvement from the text in resume
+                }, ...], # List of improvements to align the resume
+            importance: string # Why it matters
+        }
+    ]
+}
+
+Example:
+{
+    "strengths": [
+        {
+            "title": "Strong Technical Foundation",
+            "strength": "The resume demonstrates a solid technical skillset, with proficiency in SQL (Spark SQL, MySQL, MS SQL, PostgreSQL), Python, machine learning libraries (Scikit-learn, PyTorch), cloud platforms (Azure, AWS, Databricks), data manipulation (Numpy, Pandas) and data visualization (PowerBI).",
+            "importance": "The job description explicitly requires expertise in SQL and at least one scripting language (ideally Python or R). It also mentions the requirement to build predictive models and transform raw data, aligning perfectly with the listed skills."
+        },
+        {
+            "title": "Practical Project Experience",
+            "strength": "The resume showcases several projects such as loan risk modeling, sales forecasting, and remote patient management that demonstrate the candidate's ability to apply data science techniques to solve real-world problems. These projects display hands-on experience with statistical inference, data mining, predictive modeling and data presentation.",
+            "importance": "The job description emphasizes the importance of transforming data into evidence to guide product decisions. The projects listed demonstrate the candidate's ability to apply data science knowledge in practical settings, aligning with the job requirements."
+        },
+        {
+            "title": "Experience in Agile Environments",
+            "strength": "The resume mentions experience working in an 'agile environment managed with JIRA' and 'collaborated with cross-functional teams'.",
+             "importance":"The job description requires the candidate to work closely with product, engineering, and marketing pillars and working in an agile environment is beneficial for that."
+        },
+        {
+            "title":"Experience with Dashboarding",
+            "strength": "The resume states 'Built dashboard on PowerBI to monitor key performance indicators'.",
+            "importance": "The job description specifies that the candidate will be responsible for working with teams to build and maintain dashboards, demonstrating Mihir's relevant skill."
+         }
+    ],
+    "weaknesses": [
+        {
+            "ttile": "Lack of Explicit Product Focus",
+            "problem": "While the resume demonstrates data science expertise, it doesn't consistently highlight a product-centric approach. There is a lack of explicit connection between data analysis and product decision-making or emphasis on understanding user behavior and product metrics.",
+             "improvment": [
+              {
+                 "issue":"The resume currently lacks language that ties data analysis to product strategy",
+                 "solution": "Incorporate keywords like 'user behavior,' 'product metrics,' 'customer experience,' and 'user insights'. Also, use specific examples to illustrate how data projects influenced product decisions.",
+                 "suggested_improvement":"Instead of just saying 'Implemented data science use cases' consider something like: 'Developed and deployed 3 data science use cases focused on improving key product metrics such as user engagement and retention rates. These projects led to insights regarding user behavior that influenced product decisions'."
+              },
+                 {
+                  "issue":"The objective statement does not specify focus on product analytics/data science",
+                 "solution": "Tailor the objective to explicitly mention the goal to contribute to product development using data.",
+                   "suggested_improvement":"The current objective states 'Experienced full-stack data scientist with a strong foundation in Computer Science'. Change this to something like 'Experienced data scientist with a strong foundation in Computer Science focused on leveraging data to drive product growth and user engagement'."
+                 },
+              {
+                  "issue": "The resume does not show the impact projects have on the end user.",
+                  "solution": "Explicitly mention how each project directly or indirectly impacted the end-user or product.",
+                    "suggested_improvement": "Instead of 'Developed time series forecasting models', use something like: 'Developed time series forecasting models to predict Walmart's item-level sales, leading to better inventory management, improved product availability for users, and achieving a 12% improvement in accuracy.'"
+              }
+            ],
+            "importance": "The job description emphasizes transforming data into evidence that guides product decisions, and a lack of focus on product weakens the resume's alignment with the role. The job description also states: Insights are useful. Impact is even better!"
+        },
+        {
+            "ttile": "Under-Quantified Impact",
+            "problem": "The resume lacks a consistent use of metrics to quantify the impact of projects and responsibilities. Some projects do include metrics, but they are not consistently used throughout the resume.",
+             "improvment": [
+              {
+                "issue": "The resume does not clearly highlight the results using numbers or percentages.",
+                "solution": "Quantify all project achievements whenever possible by using specific numbers, percentages, or other relevant metrics. For instance, instead of 'Implemented data science use cases', use 'Implemented data science use cases, resulting in a 5% decrease in customer churn'.",
+                  "suggested_improvement":"Instead of 'Optimized SQL queries using Spark SQL reducing runtime by 20%', use 'Optimized SQL queries using Spark SQL reducing runtime by 20%, leading to 10% improvement in data processing efficiency'."
+              },
+              {
+                "issue": "Impact of the work isn't clearly highlighted.",
+                "solution":"Use specific metrics to demonstrate the tangible results and business value of your work, for example, 'reduced user search time by 20%' .",
+                  "suggested_improvement":"For 'Built dashboard on PowerBI to monitor key performance indicators, improving system efficiency', use something like 'Built interactive PowerBI dashboard tracking 10+ key performance indicators, improving system efficiency by 15% and reducing time spent on data analysis by 20%."
+              }
+           ],
+             "importance": "The job description calls for using data to drive decisions, highlighting that the job expects candidates to demonstrate real impact of their work not just mention the tools they have used."
+        },
+        {
+             "ttile": "Limited Emphasis on Exploration and Discovery",
+            "problem": "While the resume touches on data analysis, it lacks emphasis on proactive exploration, problem definition, and opportunity analysis. The resume does not highlight instances where the candidate went above and beyond and discovered a problem which lead to a significant positive impact.",
+             "improvment": [
+                 {
+                     "issue":"The resume is execution focused and doesn't emphasis proactiveness and exploration.",
+                     "solution":"When describing projects, highlight instances where the candidate proactively identified a problem, performed analysis, and proposed new solutions. For example, mention how 'exploratory data analysis identified previously unnoticed data quality issues'.",
+                     "suggested_improvement":"Instead of 'Performed exploratory data analysis and data wrangling on large datasets', use 'Proactively performed exploratory data analysis and data wrangling on 100M+ records dataset, which revealed a previously unidentified data quality issue that led to a fix, increasing the accuracy of the model by 10%."
+                 },
+                 {
+                    "issue": "The resume does not highlight the hypothesis generation and opportunity analysis skills.",
+                    "solution":"Include language related to 'problem definition,' 'hypothesis generation,' 'opportunity analysis,' and 'insight gathering' to showcase a more proactive approach.",
+                     "suggested_improvement":"Use language like 'Identified a gap in existing data pipelines by generating and validating a hypothesis, and designed new workflows which improved system performance by 10%'"
+                 }
+             ],
+            "importance": "The job description emphasizes working in ambiguous areas and defining problems, a key function of a data scientist. The current resume focuses on execution rather than a proactive and discovery-focused mindset."
+         },
+        {
+            "ttile":"Lack of Context in Skills",
+            "problem":"The skills section is primarily a list of technologies without explaining the context of how they were utilized in prior projects.",
+            "improvment":[
+              {
+                  "issue": "Skills are just listed without giving any details.",
+                  "solution":"When describing past experiences, mention the context in which specific skills were used. For example, instead of just saying 'Used Spark SQL,' use 'Used Spark SQL to reduce data retrieval time by 20%, improving overall system performance'.",
+                   "suggested_improvement":"For example, instead of 'Cloud: Azure(Data Lake, Blob Storage, SQL Database)', use: 'Leveraged Azure Data Lake and SQL Database to implement an end to end data pipeline for data wrangling and machine learning models'"
+              },
+                {
+                   "issue":"No example is given where the skill was used.",
+                  "solution": "Add examples of how each tool was specifically used in past projects.",
+                   "suggested_improvement":"For example, 'Proficient in Python, using libraries like Pandas for data manipulation, Numpy for numerical analysis, Scikit-learn for machine learning model development and evaluation, and Matplotlib for data visualization'."
+                 }
+            ],
+            "importance": "While the job description does not explicitly state how the skills should be described in the resume, adding context in the experience makes the skills more impactful and show a greater understanding of the skill."
+        }
+    ]
+}
