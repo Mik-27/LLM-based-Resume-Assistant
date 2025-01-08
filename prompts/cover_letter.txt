@@ -1,0 +1,56 @@
+Task:
+Generate a cover letter following the guidelines based on the personal information provided and the job description
+
+Instructions:
+- Gather information on {company_name} mission, values and culture.
+- Use personal information aligning with the company information to tailor the cover letter.
+- Keep the length of the resume to 1 page.
+- Do not list the same things present in the resume unless required.
+
+
+- Introduction/First Paragraph
+- State the title of job you are applying for, where you found the posting, and why you are a strong candidate for the position aligning with the mission of the company.
+
+- Body(1 or 2 Paragraph)
+- Describe your experience and qualifications using examples that relate directly to the job posting. Consider two- three specific examples.
+- Explain how your qualifications and previous experiences will benefit the employer.
+- Highlight the research you conducted. Demonstrate why you want to work with the organization and why you would be an asset to the company.
+- Share in detail why your professional experiences, achievements, skills, and education are relevant and important to the position.
+
+- Closing 
+- End with a brief summary of your interest and qualifications.
+- Close your letter with a call to action. You want the employer to contact you to learn more about you, “I would be grateful for the opportunity to interview for this position.”
+- Thank the employer for reviewing your application.
+
+
+Outline:
+{full_name}
+{address}
+{email_address} | +1 {phone_number}
+
+{date_today}
+Dear Hiring Manger,
+{body}
+
+Sincerely,
+{full_name}
+
+Example:
+John Doe
+Tempe, Arizona
+john.doe@abc.com | +1 (576) 614 5686
+
+December 20th, 2024
+Dear Hiring Manger,
+As a Master's student in Computer Science at Arizona State University graduating in May 2025, I am excited to apply for the Data Analyst position at Stripe. Your mission to increase the GDP of the internet through innovative financial infrastructure aligns perfectly with my passion for leveraging data to drive impactful business decisions in the finance domain.
+During my time as a Data Scientist at LTIMindtree, I developed expertise in analyzing large-scale datasets and translating complex business needs into actionable insights. Working in the banking and finance sector, I performed exploratory data analysis and performed data manipulation to extract insights.
+My experience particularly matches Stripe's needs in several key areas:
+•	Strong programming skills in Python and SQL, demonstrated through multiple projects including sales forecasting and language modeling as well as professional experience.
+•	Statistical knowledge applied through machine learning model development.
+•	Data visualization expertise using PowerBI and Plotly, creating dashboards to monitor KPIs and improve system efficiency.
+•	Proficient is developing and debugging data pipelines maintaining data quality and integrity through my experience as a Data Scientist.
+What particularly draws me to Stripe is the opportunity to work with fundamental financial data that directly impacts the global economy. My experience in the banking domain has given me valuable insights into financial data analysis, while my academic projects showcase my ability to learn new systems quickly and work effectively with cross-functional teams.
+I would like the opportunity to discuss how my technical skills, analytical mindset, and passion for data-driven decision making could contribute to Stripe's mission. Thank you for considering my application.
+
+Sincerely,
+John Doe
