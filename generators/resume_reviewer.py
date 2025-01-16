@@ -3,7 +3,6 @@ import os
 import json
 
 sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from llm_agent.agent import LLMAgent
 
 
@@ -77,9 +76,7 @@ class ResumeReviewer:
 
     
 if __name__ == "__main__":
-    with open("../prompts/strengths_weaknesses.txt", mode='r') as f:
-        prompt = f.read().strip()
     resume = "I am a software engineer with 5 years of experience"
     job_description = "We are looking for a software engineer with 5 years of experience"
     resume_reviewer = ResumeReviewer(resume, job_description)
-    print(resume_reviewer.generate_sw(prompt).text)
+    print(resume_reviewer._generate_sw())

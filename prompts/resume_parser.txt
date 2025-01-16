@@ -1,0 +1,4 @@
+Task: Parse resume carefully and extract information from the subsections in resume.
+
+Instructions:
+- 
