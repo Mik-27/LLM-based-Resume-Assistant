@@ -1,4 +1,6 @@
 /llm_resume
 /llm_agent/__pycache__
+/database/__pycache__
 .env
 /sample_data
+test.json
