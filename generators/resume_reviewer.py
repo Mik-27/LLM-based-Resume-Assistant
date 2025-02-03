@@ -1,10 +1,13 @@
 import sys
 import os
 import json
+import pathlib
+import asyncio
 
 sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from llm_agent.agent import LLMAgent
 
+# TODO: Implement Logger
 
 class ResumeReviewer:
     """Class to generate relevancy score between resume and job description"""
@@ -15,24 +18,31 @@ class ResumeReviewer:
         self.job_description = job_description
 
 
-    def generate_relevancy_score(self):
+    async def generate_relevancy_score(self):
         """Generate relevancy score between resume and job description"""
         try:
-            with open("../prompts/relevancy_score.txt", mode='r') as f:
+            prompt_filepath = pathlib.Path(__file__).parent.parent / "prompts" / "relevancy_score.txt"
+            with open(prompt_filepath, mode='r') as f:
                 prompt = f.read().strip()
-            response = self.llm_agent.generate_json_response(prompt, self.resume, self.job_description)
+
+            contents = [self.resume, self.job_description]
+            response = await self.llm_agent.generate_json_response(prompt, contents=contents)
             response = json.loads(response.text)
-            return response
+            # print(response)
+            # print(self.resume, self.job_description)
+            return response.get('relevancy_score')
         except Exception as e:
-            print(e)
+            print("score",e)
 
     
-    def _generate_sw(self) -> dict:
+    # TODO: Update SW prompt to make it precise and reduce nesting
+    async def _generate_sw(self) -> dict:
         """Generate strengths and weaknesses of resume based on job description"""
         try:
-            with open("../prompts/strengths_weaknesses.txt", mode='r') as f:
+            prompt_filepath = pathlib.Path(__file__).parent.parent / "prompts" / "strengths_weaknesses.txt"
+            with open(prompt_filepath, mode='r') as f:
                 prompt = f.read().strip()
-            response = self.llm_agent.generate_json_response(prompt, self.resume, self.job_description)
+            response = await self.llm_agent.generate_json_response(prompt, contents=[self.resume, self.job_description])
             response = json.loads(response.text)
 
             assert type(response) == dict
@@ -44,39 +54,48 @@ class ResumeReviewer:
             print(e)
 
 
-    def get_strengths(self) -> list:
+    async def get_strengths(self) -> list:
         """Get strengths from the generated response"""
-        response = self._generate_sw()
+        response = await self._generate_sw()
         return response['strengths']
 
 
-    def get_weaknesses(self) -> list:
+    async def get_weaknesses(self) -> list:
         """Get weaknesses from the generated response"""
-        response = self._generate_sw()
+        response = await self._generate_sw()
         return response['weaknesses']
     
-    
-    def extract_keywords(self, source:str) -> dict:
+
+    # TODO: update keyword extraction
+    # TODO: Handle keyword matching using LLM itself
+    async def extract_keywords(self, source:str) -> dict:
         """Extract keywords from job description"""
         try:
             if source == "resume":
-                with open("../prompts/extract_keywords.txt", mode='r') as f:
+                prompt_filepath = pathlib.Path(__file__).parent.parent / "prompts" / "extract_keywords_resume.txt"
+                with open(prompt_filepath, mode='r') as f:
                     prompt = f.read().strip()
-                response = self.llm_agent.generate_json_response(prompt, self.resume)
-            else:
-                with open("../prompts/extract_keywords.txt", mode='r') as f:
+                response = await self.llm_agent.generate_json_response(prompt, contents=[self.resume])
+            elif source == "job":
+                prompt_filepath = pathlib.Path(__file__).parent.parent / "prompts" / "extract_keywords_jd.txt"
+                with open(prompt_filepath, mode='r') as f:
                     prompt = f.read().strip()
-                response = self.llm_agent.generate_json_response(prompt, self.job_description)
+                response = await self.llm_agent.generate_json_response(prompt, contents=[self.job_description])
+
             response = json.loads(response.text)
             return response
+        
         except Exception as e:
             print(e)
 
 
-
-    
-if __name__ == "__main__":
+# Main function to run the class and functions on test inputs
+async def main():
     resume = "I am a software engineer with 5 years of experience"
     job_description = "We are looking for a software engineer with 5 years of experience"
     resume_reviewer = ResumeReviewer(resume, job_description)
-    print(resume_reviewer._generate_sw())
+    res = await resume_reviewer.generate_relevancy_score()
+
+    
+if __name__ == "__main__":
+    asyncio.run(main())

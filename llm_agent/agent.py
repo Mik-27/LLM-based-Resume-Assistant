@@ -14,11 +14,12 @@ class LLMAgent:
                              "top_p": 0.95,
                              "top_k": 40}
 
-    def generate_json_response(self, prompt: str, resume_data:str, job_description_data:str):
+    async def generate_json_response(self, prompt: str, contents: list):
         """Generate JSON response from LLM model"""
         config = types.GenerateContentConfig(**self.model_config, response_mime_type="application/json")
-        return self.client.models.generate_content(model=self.model, contents=[prompt, resume_data, job_description_data], config=config)
+        return await self.client.aio.models.generate_content(model=self.model, contents=[prompt]+contents, config=config)
     
+    # Update function as per above one
     def generate_text_response(self, prompt:str, resume_data:str, job_description_data:str):
         """Generate text response from LLM model"""
         config = types.GenerateContentConfig(**self.model_config, response_mime_type="text/plain")
