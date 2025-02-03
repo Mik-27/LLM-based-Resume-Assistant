@@ -19,9 +19,9 @@ Output:
     ],
     weaknesses: [
         {
-            ttile: string, 
+            title: string, 
             problem: string, # Detailed problem
-            improvment:[
+            improvement:[
                 {
                     issue: string, 
                     solution: string,
@@ -48,7 +48,7 @@ Example:
         {
             "title": "Experience in Agile Environments",
             "strength": "The resume mentions experience working in an 'agile environment managed with JIRA' and 'collaborated with cross-functional teams'.",
-             "importance":"The job description requires the candidate to work closely with product, engineering, and marketing pillars and working in an agile environment is beneficial for that."
+            "importance":"The job description requires the candidate to work closely with product, engineering, and marketing pillars and working in an agile environment is beneficial for that."
         },
         {
             "title":"Experience with Dashboarding",
@@ -58,9 +58,9 @@ Example:
     ],
     "weaknesses": [
         {
-            "ttile": "Lack of Explicit Product Focus",
+            "title": "Lack of Explicit Product Focus",
             "problem": "While the resume demonstrates data science expertise, it doesn't consistently highlight a product-centric approach. There is a lack of explicit connection between data analysis and product decision-making or emphasis on understanding user behavior and product metrics.",
-             "improvment": [
+             "improvement": [
               {
                  "issue":"The resume currently lacks language that ties data analysis to product strategy",
                  "solution": "Incorporate keywords like 'user behavior,' 'product metrics,' 'customer experience,' and 'user insights'. Also, use specific examples to illustrate how data projects influenced product decisions.",
@@ -80,9 +80,9 @@ Example:
             "importance": "The job description emphasizes transforming data into evidence that guides product decisions, and a lack of focus on product weakens the resume's alignment with the role. The job description also states: Insights are useful. Impact is even better!"
         },
         {
-            "ttile": "Under-Quantified Impact",
+            "title": "Under-Quantified Impact",
             "problem": "The resume lacks a consistent use of metrics to quantify the impact of projects and responsibilities. Some projects do include metrics, but they are not consistently used throughout the resume.",
-             "improvment": [
+             "improvement": [
               {
                 "issue": "The resume does not clearly highlight the results using numbers or percentages.",
                 "solution": "Quantify all project achievements whenever possible by using specific numbers, percentages, or other relevant metrics. For instance, instead of 'Implemented data science use cases', use 'Implemented data science use cases, resulting in a 5% decrease in customer churn'.",
@@ -97,9 +97,9 @@ Example:
              "importance": "The job description calls for using data to drive decisions, highlighting that the job expects candidates to demonstrate real impact of their work not just mention the tools they have used."
         },
         {
-             "ttile": "Limited Emphasis on Exploration and Discovery",
+             "title": "Limited Emphasis on Exploration and Discovery",
             "problem": "While the resume touches on data analysis, it lacks emphasis on proactive exploration, problem definition, and opportunity analysis. The resume does not highlight instances where the candidate went above and beyond and discovered a problem which lead to a significant positive impact.",
-             "improvment": [
+             "improvement": [
                  {
                      "issue":"The resume is execution focused and doesn't emphasis proactiveness and exploration.",
                      "solution":"When describing projects, highlight instances where the candidate proactively identified a problem, performed analysis, and proposed new solutions. For example, mention how 'exploratory data analysis identified previously unnoticed data quality issues'.",
@@ -114,9 +114,9 @@ Example:
             "importance": "The job description emphasizes working in ambiguous areas and defining problems, a key function of a data scientist. The current resume focuses on execution rather than a proactive and discovery-focused mindset."
          },
         {
-            "ttile":"Lack of Context in Skills",
+            "title":"Lack of Context in Skills",
             "problem":"The skills section is primarily a list of technologies without explaining the context of how they were utilized in prior projects.",
-            "improvment":[
+            "improvement":[
               {
                   "issue": "Skills are just listed without giving any details.",
                   "solution":"When describing past experiences, mention the context in which specific skills were used. For example, instead of just saying 'Used Spark SQL,' use 'Used Spark SQL to reduce data retrieval time by 20%, improving overall system performance'.",
