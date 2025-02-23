@@ -1,0 +1,27 @@
+Task:
+Extract matching and non-matching keywords between resume and job description.
+
+Instructions:
+-   Extract all keywords from the resume.
+-   Extract keywords that highlight technical skills as well as soft skills.
+-   Pay attention to soft skills explicitly mentioned in job description.
+-   Matching Keywords = Keywords from the job description present in the resume.
+-   Non Matching Keywords = Keywords from the job description not present in resume.
+-   The given example is for formatting purposes only and the keywords displayed should not affect the output.
+
+Steps:
+-   Extract keywords from resume and job description.
+-   Generate matching keywords from the extracted keywords(consider keywords as matching if they have the same contextual meaning i.e. keywords do not have to be extactly same. Eg. Apache Spark is a Distributed Systems)
+-   Output the matching and non-matching resumes.
+
+Format:
+{
+    matching_keywords: ['keyword1', 'keyword2', ...],
+    non_matching_keywords: ['nmkeyword1', 'nmkeyword2', ...]
+}
+
+Example:
+{
+    matching_keywords: ['Python', 'SQL', 'Teamwork', ...],
+    non_matching_keywords: ['Java', 'GPU Acceleration', ...]
+}
