@@ -1,6 +1,6 @@
 import sys
 import os
-import json
+import pathlib
 import datetime
 
 sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -26,12 +26,14 @@ class CoverLetterGenerator:
     def _get_personal_information(self):
         pass
 
-    def generate_cover_letter(self):
+    # TODO: pass parameters, personal information, strengths and weakeness.]
+    async def generate_cover_letter(self):
         """Generate cover letter based on personal information and job description"""
         try:
-            with open("../prompts/cover_letter.txt", mode='r') as f:
+            prompt_filepath = pathlib.Path(__file__).parent.parent / "prompts" / "cover_letter.txt"
+            with open(prompt_filepath, mode='r') as f:
                 prompt = f.read().strip()
-            response = self.llm_agent.generate_text_response(prompt, self.resume, self.job_description)
+            response = await self.llm_agent.generate_text_response(prompt, self.resume, self.job_description)
             return response
         
         except Exception as e:
