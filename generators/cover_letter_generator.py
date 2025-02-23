@@ -1,11 +1,19 @@
 import sys
 import os
 import pathlib
+import asyncio
 import datetime
+import logging
+import json
 
 sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+from collections import defaultdict
 from llm_agent.agent import LLMAgent
+from config.logger_config import setup_logger
+from util.helpers import get_current_date
+
+logger = setup_logger(__name__, level=logging.DEBUG)
 
 
 class CoverLetterGenerator:
@@ -27,15 +35,35 @@ class CoverLetterGenerator:
         pass
 
     # TODO: pass parameters, personal information, strengths and weakeness.]
-    async def generate_cover_letter(self):
+    async def generate_cover_letter(self, addl_info: dict = {}) -> str:
         """Generate cover letter based on personal information and job description"""
         try:
+            metadata = defaultdict(str)
+            metadata['date_today'] = self._get_current_date()
             prompt_filepath = pathlib.Path(__file__).parent.parent / "prompts" / "cover_letter.txt"
-            with open(prompt_filepath, mode='r') as f:
+            with open(prompt_filepath, mode='r', encoding='utf-8') as f:
                 prompt = f.read().strip()
-            response = await self.llm_agent.generate_text_response(prompt, self.resume, self.job_description)
+
+            response = await self.llm_agent.generate_text_response(prompt, self.resume, self.job_description, metadata=json.dumps(metadata))
             return response
         
         except Exception as e:
-            print(e)
+            print("Error generating cover letter.",e)
 
+
+async def main():
+    resume = pathlib.Path(__file__).parent.parent / "sample_data" / "resumes" / "resume.txt"
+    job_description = pathlib.Path(__file__).parent.parent / "sample_data" / "job_desc" / "jd.txt"
+    
+    with open(resume, mode='r') as f:
+        resume = f.read()
+    with open(job_description, mode='r') as f:
+        job_description = f.read()
+    cover_letter_generator = CoverLetterGenerator(resume, job_description)
+    res = await cover_letter_generator.generate_cover_letter()
+    logger.debug(f"Cover Letter:\n {res}")
+
+    
+
+if __name__ == "__main__":
+    asyncio.run(main())

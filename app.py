@@ -129,6 +129,7 @@ async def switch_layout():
     st.session_state.resume = file_upload
     # if not st.session_state.job_desc:
     st.session_state.job_desc = job_text
+    st.session_state.cover_letter = None
 
     # Initialize ResumeReviewer object if not initialized
     if not st.session_state.resume_reviewer:

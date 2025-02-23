@@ -6,6 +6,9 @@ Instructions:
 - Use personal information aligning with the company information to tailor the cover letter.
 - Keep the length of the resume to 1 page.
 - Do not list the same things present in the resume unless required.
+- Do not format the body of the cover letter.
+- Format properly as per the Outline provided with line breaks('\n') at intended positions.
+- Stick to the format in Outline.
 
 
 - Introduction/First Paragraph
@@ -24,9 +27,9 @@ Instructions:
 
 
 Outline:
-{full_name}
-{address}
-{email_address} | +1 {phone_number}
+{full_name} 
+{address} 
+{email_address} | +1 {phone_number} 
 
 {date_today}
 Dear Hiring Manger,
@@ -36,21 +39,17 @@ Sincerely,
 {full_name}
 
 Example:
-John Doe
-Tempe, Arizona
-john.doe@abc.com | +1 (576) 614 5686
 
-December 20th, 2024
-Dear Hiring Manger,
-As a Master's student in Computer Science at Arizona State University graduating in May 2025, I am excited to apply for the Data Analyst position at Stripe. Your mission to increase the GDP of the internet through innovative financial infrastructure aligns perfectly with my passion for leveraging data to drive impactful business decisions in the finance domain.
-During my time as a Data Scientist at LTIMindtree, I developed expertise in analyzing large-scale datasets and translating complex business needs into actionable insights. Working in the banking and finance sector, I performed exploratory data analysis and performed data manipulation to extract insights.
-My experience particularly matches Stripe's needs in several key areas:
-•	Strong programming skills in Python and SQL, demonstrated through multiple projects including sales forecasting and language modeling as well as professional experience.
-•	Statistical knowledge applied through machine learning model development.
-•	Data visualization expertise using PowerBI and Plotly, creating dashboards to monitor KPIs and improve system efficiency.
-•	Proficient is developing and debugging data pipelines maintaining data quality and integrity through my experience as a Data Scientist.
-What particularly draws me to Stripe is the opportunity to work with fundamental financial data that directly impacts the global economy. My experience in the banking domain has given me valuable insights into financial data analysis, while my academic projects showcase my ability to learn new systems quickly and work effectively with cross-functional teams.
-I would like the opportunity to discuss how my technical skills, analytical mindset, and passion for data-driven decision making could contribute to Stripe's mission. Thank you for considering my application.
+John Doe 
+Tempe, Arizona 
+john.doe@abc.com | +1 (576) 614 5686 
+
+February 22nd, 2025
+Dear Hiring Manager,
+I am writing to express my strong interest in working at American Airlines. With my experience in applying machine learning and statistical techniques to solve complex business problems, particularly in the areas of forecasting, optimization, and data analysis, I am confident I possess the skills and expertise necessary to contribute significantly to your team's mission of improving aircraft maintenance, scheduling, and operational performance. 
+I am confident that I can bring immediate value to American Airlines' Technical Operations Performance and Analytics team. My experience in building time series forecasting models, as demonstrated in my forecasting sales for Walmart supply chain project, will enable me to quickly contribute to the development of predictive systems. Furthermore, my experience in developing end-to-end solutions in Azure and Databricks for loan customer segmentation demonstrates my ability to leverage machine learning to create innovative and impactful solutions. I am also eager to design and manage feature-based datasets in Azure to streamline ML & AI and to effectively communicate complex experiments, models, and analytics outputs to partners in a simple and actionable way.
+I am deeply impressed by American Airlines' commitment to using data and analytics to drive improvements in its operations and enhance the customer experience. The opportunity to work in a team that is at the forefront of this effort and to contribute to a company that plays such a vital role in connecting with people around the world is incredibly appealing. I am particularly excited by the prospect of collaborating with teams across the business to translate their needs and challenges into machine learning and statistical problems.
+I am eager to leverage my abilities to build predictive models, perform feature engineering, and communicate complex findings to both technical and non-technical audiences. Thank you for considering my application.
 
 Sincerely,
 John Doe
